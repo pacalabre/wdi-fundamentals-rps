@@ -43,18 +43,21 @@ function getComputerMove(move,playerMove) {
     move = randomPlay();
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    if(move == move) {
+    /*if(move == move) {
         console.log("Computer's move is "+ move)
         return move;
-    }
-    else if(move == null) {
+    }*/
+    if (move == null) {
         alert("error, computer did not choose anything")
     }
-    getWinner(move, playerMove);
+    console.log("computers move ="+move);
+    var computerMove = move;
+    getWinner(playerMove, computerMove);
 }
 
 function getWinner(playerMove,computerMove) {
-    var winner;
+    var playerWins;
+    var computerWins;
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
@@ -96,24 +99,23 @@ function getWinner(playerMove,computerMove) {
         alert('tie');
         getInput();
     }
-    console.log(playerWins);
-    return playerWins;
+    console.log("winner= "+winner);
+    playToFive(playerWins,computerWins)
 }
 
-function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+function playToFive(playerWins, computerWins) {
+    //console.log("Let's play Rock, Paper, Scissors");
     var playerWins;
     var computerWins;
 
     getPlayerMove();
-    getComputerMove();
-    getWinner();
 
-    if(playerWins === 5) {
-        alert("Player Wins");
-    } else if ( computerWins === 5) {
-        alert("Computer Wins");
-    }
+
+    //if(playerWins === 5) {
+       // alert("Player Wins");
+    //} else if ( computerWins === 5) {
+        //alert("Computer Wins");
+    //}
 }
 
     playToFive();

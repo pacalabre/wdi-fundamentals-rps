@@ -35,11 +35,10 @@ function getPlayerMove(move) {
         }
     console.log("Player's move is = "+move);
     var playerMove = move;
-    getComputerMove(move, playerMove);
-
+    //getComputerMove(move, playerMove);
+    return playerMove;
 }
-
-
+getPlayerMove();
 
 function getComputerMove(move,playerMove) {
     // Write an expression that operates on a variable called `move`
